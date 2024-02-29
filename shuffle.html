@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuffle Outfit</title>
+</head>
+<body>
+    <h1>Shuffled Outfit</h1>
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        <img src="{{ url_for('static', filename='uploads/tops/' + shuffled_outfit.top) }}" alt="Shuffled Top">
+        <img src="{{ url_for('static', filename='uploads/bottoms/' + shuffled_outfit.bottom) }}" alt="Shuffled Bottom">
+    {% endif %}
+
+    <a href="{{ url_for('wardrobe') }}">View Wardrobe</a>
+</body>
+</html>

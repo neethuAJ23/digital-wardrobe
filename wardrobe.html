@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wardrobe</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #01766c;
+            margin-top: 50px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #217dbb;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            display: inline-block;
+            margin: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        li:hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            max-width: 100px;
+            border: 1px solid #01766c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: #01766c;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4em;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #217dbb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Wardrobe</h1>
+    <h2>Tops</h2>
+    <ul>
+        {% for top in wardrobe_images.tops %}
+            <li><img src="static/uploads/tops/{{ top }}" alt="Top"></li>
+        {% endfor %}
+    </ul>
+    
+
+    <h2>Bottoms</h2>
+    <ul>
+        {% for bottom in wardrobe_images.bottoms %}
+            <li><img src="static/uploads/bottoms/{{ bottom }}" alt="Bottom"></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
